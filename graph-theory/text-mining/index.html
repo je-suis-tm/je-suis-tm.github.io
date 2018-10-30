@@ -119,7 +119,7 @@ woman got put in jail' was not exactly business related (I'm sorry, it is still
 a great story though). Couldn't I find a way to create a filter to extract the 
 
 key information?</p>
-    <hr>
+    <br>
     <img src='https://raw.githubusercontent.com/tattooday/graph-
 
 theory/master/Text%20Mining%20project/preview/email.PNG' class="w3-image" 
@@ -224,7 +224,7 @@ the titles. These titles do not appear in this graph structure. Later on, we
 could add these rebellious titles back to our output. For the moment, we are 
 
 only concerned with the nodes in the graph ADT.</p>
-    <hr>
+    <br>
     <img src='https://raw.githubusercontent.com/tattooday/graph-
 
 theory/master/Text%20Mining%20project/preview/original.png' class="w3-image" 
@@ -265,7 +265,7 @@ want to see this content once in our email instead of three times from different
 sources. The title of the content with the most common words with others is 
 
 denoted as our target.</p>
-    <hr>
+    <br>
     <img src='https://raw.githubusercontent.com/tattooday/graph-
 
 theory/master/Text%20Mining%20project/preview/edge.png' class="w3-image" 
@@ -280,7 +280,7 @@ black squares highlight strongly connected components and red circles highlight
 key nodes which either have the most edges in a given strongly connected 
 
 component or connect to other strongly connected components.</p>
-    <hr>
+    <br>
     <img src='https://raw.githubusercontent.com/tattooday/graph-
 
 theory/master/Text%20Mining%20project/preview/target.png' class="w3-image" 
@@ -331,7 +331,7 @@ Unfortunately, the visualization layout of networkx is random unless we specify
 the fixed position for each node (which implies a lot of work). I tried my very 
 
 best to keep all nodes in consistent positions throughout these figures.</p>
-    <hr>
+    <br>
     <img src='https://raw.githubusercontent.com/tattooday/graph-
 
 theory/master/Text%20Mining%20project/preview/bfs.png' class="w3-image" 
@@ -362,7 +362,7 @@ the output list. But node beta and node alpha are connected and apparently node
 alpha is the target node we defined. Thus, we need another round of iteration to 
 
 remove one node from any two connected nodes in the output list. </p>
-    <hr>
+    <br>
     <img src='https://raw.githubusercontent.com/tattooday/graph-
 
 theory/master/Text%20Mining%20project/preview/alpha%2Cbeta%2Cgamma.png' 
@@ -386,7 +386,7 @@ text mining! Unlike supervised learning, the algorithm doesn't require an extra
 large memory for training dataset. It beats machine learning in both time and 
 
 space complexity.</p>
-    <hr>
+    <br>
     <img src='https://raw.githubusercontent.com/tattooday/graph-
 
 theory/master/Text%20Mining%20project/preview/result.png' class="w3-image" 
@@ -412,7 +412,17 @@ escape prison in Tripoli chaos'. They are connected by the common word 'prison'
 
 but they appear to be completely different contents. I suppose there is always a 
 
-tradeoff among different algorithms. In terms of time, space and accuracy, 
+tradeoff among different algorithms. Is there any room for improvement? Yes and 
+      
+always. We could implement a heuristic technique as in <a href="https://github.com
+  
+/tattooday/graph-theory/blob/master/a_star%20maze.ipynb">Graph Theory - A*<a>. 
+  
+In our alternative BFS traversal, our condition would be the number of edges plus 
+      
+the total sum of the weights instead of the number of edges alone.</p> 
+      
+<p>In terms of time, space and accuracy, 
 
 apparently graph structure traversal is a better approach for this scenario 
 
