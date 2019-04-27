@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html>
-<title>Webscraping - MENA Newsfeed</title>
+<title>Webscraping - MENA Newsletter</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -80,17 +80,17 @@ height="1108">
   <div class="w3-container w3-white w3-content w3-centre w3-padding-64" 
 
 id="band">
-    <h2 class="w3-wide">Webscraping - MENA Newsfeed</h2>
+    <h2 class="w3-wide">Webscraping - MENA Newsletter</h2>
     <br>
-    <img src="https://je-suis-tm.github.io/img/newsfeed.png" class="w3-image" width="600" height="450">
+    <img src="https://je-suis-tm.github.io/img/newsletter.png" class="w3-image" width="600" height="450">
     <br>
     <br>
-    <p>This is a complete data engineering process. The idea is to scrape the latest news title from different websites including BBC, Wall Street Journal, Al Jazeera, Reuters, Financial Times, Bloomberg, CNN, Fortune and The Economist. The raw data then goes through a few pipelines to be cleansed and stored in a database. Due to unique value constrain of the database, only latest news would be embed into HTML email. Eventually HTML emails are automatically sent out everyday as newsfeed.</p>
+    <p>This is a complete data engineering process. The idea is to scrape the latest news title from different websites including BBC, Wall Street Journal, Al Jazeera, Reuters, Financial Times, Bloomberg, CNN, Fortune and The Economist. The raw data then goes through a few pipelines to be cleansed and stored in a database. Due to unique value constrain of the database, only latest news would be embed into HTML email. Eventually HTML emails are automatically sent out everyday as newsletter.</p>
     <p>Click <a href="https://github.com/je-suis-tm/web-scraping/blob/master/Scrape%2C%20ETL%2C%20HTML%20Email%20from%20Database.py">here</a> to view the first version of this project. The biggest difference between two versions is the process order. For the first version, the order is scraping the first website, ETL, inserting into database, getting output and repeating the process. For the second version, the order is scraping all the websites, concatenating them, ETL, inserting into database and getting output. The advantage of the latter version is that it can be integrated with <a href="https://je-suis-tm.github.io/graph-theory/text-mining/">Graph Theory - Text Mining</a> to remove similar content and extract the key information. In addition, when encountering network issues in the middle of scraping, we simply reboot the script without worrying over inserted data of the previous websites. Other minor improvements include adding preview image to HTML email and using dataframe output rather than list output. As for <a href="https://je-suis-tm.github.io/machine-learning/naive-bayes-optimization/">optimized Naive Bayes</a>, both versions of web scraping can be easily integrated into NLP framework.</p>
     <br>
     <br>
     <p>Click the icon below to be redirected to GitHub Repository</p>
-    <a href="https://github.com/je-suis-tm/web-scraping/blob/master/MENA%20Newsfeed.py" target="_blank"><i class="fa fa-github-alt fa-fw w3-
+    <a href="https://github.com/je-suis-tm/web-scraping/blob/master/MENA%20Newsletter.py" target="_blank"><i class="fa fa-github-alt fa-fw w3-
 
 xxlarge"></i></a>
   <!-- End Main Section -->   
