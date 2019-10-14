@@ -191,13 +191,22 @@ id="band">
     <h3>Canadian Dollars and Western Canadian Select</h3>
     <br>
     <br>
+    <p class="w3-justify">For some bizarre reason, everybody says Canadian Dollar is a petrocurrency. We all know Canada is a country with huge deposits of natural resources. However, it never strikes me as a country that exports a lot of petroleum. Most of its crude oil are heavy and sour, which is a perfect blend with light sweet shale oil from Permian Basin. Needless to say, the largest buyer of Canadian crude oil is Uncle Sam.</p>
+
+    <p class="w3-justify">In-sample data regression shows no sign of petrocurrency.</p>
+    <p class="w3-justify">Remodelling out-of-sample data by K Means turns up some promising results.</p>
     <img src='https://raw.githubusercontent.com/je-suis-tm/quant-trading/master/Oil%20Money%20project/preview/cad%20model.png' class='w3-image' width='600' height='450'>
+    <p class="w3-justify">Nomalized values on forex imply UK Sterling and Chinese Yuan were in sync until Brexit referendum ruined everything. It is quite bizarre that US Dollar does not have the strongest R Squared.</p>
     <img src='https://raw.githubusercontent.com/je-suis-tm/quant-trading/master/Oil%20Money%20project/preview/cad%20currency.png' class='w3-image' width='600' height='450'>
+    <p class="w3-justify">Normalized values on crude oil blends demonstrate that Canadian blends are indeed associated with West Texas Intermediate.</p>
     <img src='https://raw.githubusercontent.com/je-suis-tm/quant-trading/master/Oil%20Money%20project/preview/cad%20crude.png' class='w3-image' width='600' height='450'>
+    <p class="w3-justify">K-Means is applied here to find out the clustering on time horizon. Both elbow method and silhouette score are taken into consideration.</p>
     <img src='https://raw.githubusercontent.com/je-suis-tm/quant-trading/master/Oil%20Money%20project/preview/cad%20elbow.png' class='w3-image' width='600' height='450'>
-    <img src='https://raw.githubusercontent.com/je-suis-tm/quant-trading/master/Oil%20Money%20project/preview/cad%20silhouette.png' class='w3-image' width='600' height='450'>    
+    <img src='https://raw.githubusercontent.com/je-suis-tm/quant-trading/master/Oil%20Money%20project/preview/cad%20silhouette.png' class='w3-image' width='600' height='450'>
+    <p class="w3-justify">Visualize the clustering in three dimensions. The graph indicates the threshold that separates two groups.</p>
     <img src='https://raw.githubusercontent.com/je-suis-tm/quant-trading/master/Oil%20Money%20project/preview/cad%20groups.png' class='w3-image' width='600' height='450'>
-    <img src='https://raw.githubusercontent.com/je-suis-tm/quant-trading/master/Oil%20Money%20project/preview/cad%20kmeans.png' class='w3-image' width='600' height='450'>  
+    <img src='https://raw.githubusercontent.com/je-suis-tm/quant-trading/master/Oil%20Money%20project/preview/cad%20kmeans.png' class='w3-image' width='600' height='450'>
+    <p class="w3-justify">Nonetheless, even if we split the timeframe in regards to the threshold, we still cannot observe a significant R squared.</p>
     <img src='https://raw.githubusercontent.com/je-suis-tm/quant-trading/master/Oil%20Money%20project/preview/cad%20before.png' class='w3-image' width='600' height='450'>  
     <img src='https://raw.githubusercontent.com/je-suis-tm/quant-trading/master/Oil%20Money%20project/preview/cad%20after.png' class='w3-image' width='600' height='450'>
     <br>
