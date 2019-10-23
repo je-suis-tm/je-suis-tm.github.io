@@ -196,21 +196,40 @@ id="band">
     <p class="w3-justify">Based upon the information from <a href=https://www.trademap.org/Index.aspx>International Trade Centre</a>, mineral fuel is not the only export. Canada also exports a lot of other natural resources including natural gas, precious gems, base metals and agricultural products.</p>
 
     <p class="w3-justify">In-sample data regression shows no sign of petrocurrency.</p>
-    <p class="w3-justify">Remodelling out-of-sample data by K Means turns up some promising results.</p>
+    <br>
     <img src='https://raw.githubusercontent.com/je-suis-tm/quant-trading/master/Oil%20Money%20project/preview/cad%20model.png' class='w3-image' width='600' height='450'>
+       
     <p class="w3-justify">Nomalized values on forex imply UK Sterling and Chinese Yuan were in sync until Brexit referendum ruined everything. It is quite bizarre that US Dollar does not have the strongest R Squared.</p>
+    <br>
     <img src='https://raw.githubusercontent.com/je-suis-tm/quant-trading/master/Oil%20Money%20project/preview/cad%20currency.png' class='w3-image' width='600' height='450'>
+    
     <p class="w3-justify">Normalized values on crude oil blends demonstrate that Canadian blends are indeed associated with West Texas Intermediate.</p>
+    <br>
     <img src='https://raw.githubusercontent.com/je-suis-tm/quant-trading/master/Oil%20Money%20project/preview/cad%20crude.png' class='w3-image' width='600' height='450'>
+    
+    <p class="w3-justify">Loonie and WCS priced in different currencies show diverging results. Most studies on Loonie use raw exchange rate of CADUSD. It appears that so-called petrocurrency status is possibly due to the dollar effect.</p>
+    <br>
+    <img src='https://raw.githubusercontent.com/je-suis-tm/quant-trading/master/Oil%20Money%20project/preview/cad%20wcs%20in%20aud.png' class='w3-image' width='600' height='450'>
+    <img src='https://raw.githubusercontent.com/je-suis-tm/quant-trading/master/Oil%20Money%20project/preview/cad%20wcs%20in%20usd.png' class='w3-image' width='600' height='450'>
+    
     <p class="w3-justify">K-Means is applied here to find out the clustering on time horizon. Both elbow method and silhouette score are taken into consideration.</p>
+    <br>
     <img src='https://raw.githubusercontent.com/je-suis-tm/quant-trading/master/Oil%20Money%20project/preview/cad%20elbow.png' class='w3-image' width='600' height='450'>
     <img src='https://raw.githubusercontent.com/je-suis-tm/quant-trading/master/Oil%20Money%20project/preview/cad%20silhouette.png' class='w3-image' width='600' height='450'>
+    
     <p class="w3-justify">Visualize the clustering in three dimensions. The graph indicates the threshold that separates two groups.</p>
-    <img src='https://raw.githubusercontent.com/je-suis-tm/quant-trading/master/Oil%20Money%20project/preview/cad%20groups.png' class='w3-image' width='600' height='450'>
+    <br>
     <img src='https://raw.githubusercontent.com/je-suis-tm/quant-trading/master/Oil%20Money%20project/preview/cad%20kmeans.png' class='w3-image' width='600' height='450'>
+    
     <p class="w3-justify">Nonetheless, even if we split the timeframe in regards to the threshold, we still cannot observe a significant R squared.</p>
+    <br>
+    <img src='https://raw.githubusercontent.com/je-suis-tm/quant-trading/master/Oil%20Money%20project/preview/cad%20groups.png' class='w3-image' width='600' height='450'>
+    
+    <p class="w3-justify">Remodelling out-of-sample data by K Means turns up some promising results.</p>
+    <br>
     <img src='https://raw.githubusercontent.com/je-suis-tm/quant-trading/master/Oil%20Money%20project/preview/cad%20before.png' class='w3-image' width='600' height='450'>  
     <img src='https://raw.githubusercontent.com/je-suis-tm/quant-trading/master/Oil%20Money%20project/preview/cad%20after.png' class='w3-image' width='600' height='450'>
+    <br>
     <br>
     <h3>Further Reading</h3>
     <ol>
