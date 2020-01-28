@@ -9,3 +9,5 @@ https://www.wallpaperup.com/
 Link for convert images to ico format:
 
 https://icoconvert.com/
+
+For parallax scrolling compatibility with w3.css, set 'body' height 100% and 'background image' min-height 100%.
