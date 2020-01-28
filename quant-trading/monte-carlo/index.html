@@ -10,10 +10,31 @@ family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-
 
 awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
 body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-.mySlides {display: none}
+
+body, html {
+  height: 100%;
+  color: #000000;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('https://je-suis-tm.github.io/img/background.jpg');
+  min-height:160%;
+}
+
+.w3-panel {
+  margin-top:-15%;
+}
 </style>
+  
+  
 <head>
   <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/je-suis-tm/je-suis-tm.github.io/master/img/favicon.ico" />
 </head>
@@ -25,13 +46,11 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
 
 <div >
-
 <div class="w3-row w3-large w3-black" >
    
 
 <div class="w3-col s2">
 <a href="https://je-suis-tm.github.io/#" class="w3-block w3-button ">
-
 HOME&emsp;<i class="fa fa-home w3-xxlarge w3-xxlarge w3-center"></i></a>
 </div>
    
@@ -39,7 +58,6 @@ HOME&emsp;<i class="fa fa-home w3-xxlarge w3-xxlarge w3-center"></i></a>
 
 <div class="w3-col s2">
 <a href="https://je-suis-tm.github.io/#recent" class="w3-block w3-button ">
-
 RECENT&emsp;<i class="fa fa-newspaper-o w3-xxlarge w3-center"></i></a>
 </div>
   
@@ -47,38 +65,26 @@ RECENT&emsp;<i class="fa fa-newspaper-o w3-xxlarge w3-center"></i></a>
 <div class="w3-col s2">
 <a href="https://je-suis-tm.github.io/#upcoming" class="w3-block w3-button ">
 UPCOMING&emsp;<i class="fa fa-rocket w3-xxlarge w3-center"></i></a>
-
 </div> 
 
 <div class="w3-col s2">
 <a href="https://je-suis-tm.github.io/#about" class="w3-block w3-button ">
-
 ABOUT&emsp;<i class="fa fa-trademark w3-xxlarge w3-center"></i></a>
-
 </div>
 
 <div class="w3-col s2">
 <a href="https://je-suis-tm.github.io/#contact" class="w3-block w3-button ">
-
 CONTACT&emsp;<i class="fa fa-envelope w3-xxlarge w3-center"></i></a>
-
 </div>
 
 <div class="w3-col s2">
 <a href="" class="w3-block w3-button ">
-
 FUTURAMA&emsp;<i class="fa fa-space-shuttle w3-xxlarge w3-center"></i></a>
-
-</div>
-
-
-
 </div>
 
 </div>
 </div>
-
-
+</div>
 
 
 <!-- Navbar on small screens (remove the onclick attribute if you want the 
@@ -105,24 +111,24 @@ padding-large" >ABOUT</a>
 </div>
 
 
+<!-- Header/Home -->
+  
+<div class="bgimg-1 w3-display-container">
+  <div class="w3-panel w3-display-middle">
+    <div class="w3-opacity-min w3-center">
+    <span class="w3-xxxlarge w3-text-white w3-wide ">T.M.
+    </div>
+    <div class="w3-opacity-min w3-center">
+    <span class="w3-large w3-text-white ">Half Researcher, Half Developer.</span></div>
+  </div>  
+</div>
+
 
 <!-- Page Content -->
-<div class="w3-padding-large" id="main">
-  <!-- Header/Home -->
-  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-    <h1 class="w3-jumbo"><span class="w3-hide-small">T.M.</span></h1>
-    <p>Half Researcher, Half Developer.</p>
-    <img src="/img/background.jpg" alt="background" class="w3-image" width="992" 
-
-height="1108">
-  </header>
-
-
-
   <!-- The Main Section -->
-  <div class="w3-container w3-white w3-content w3-centre w3-padding-64" 
-
-id="band">
+<div class="w3-container w3-black w3-centre w3-margin-top" >
+<div class="w3-container w3-white w3-content w3-justify w3-margin-top" >
+  
     <h2 class="w3-wide">Quant Trading - Monte Carlo</h2>
     <br>
     <h6 class="w3-opacity"><i>Monte Carlo simulation in trading is nothing but house of cards.</i></h6>
@@ -164,11 +170,12 @@ id="band">
     <p>Click the icon below to be redirected to GitHub Repository</p>
     <a href="https://github.com/je-suis-tm/quant-trading/tree/master/Monte%20Carlo%20project" target="_blank"><i class="fa fa-github-alt fa-fw w3-xxlarge"></i></a>
   <!-- End Main Section -->   
-  </div>	
+</div>	  
+</div>
+</body>
+<hr>  
 
 
-
-  <hr>  
   <!-- Footer -->
   <footer class="w3-container w3-card w3-black w3-margin-bottom">
     <a href="https://github.com/je-suis-tm" target="_blank"><i class="fa fa-
@@ -187,10 +194,5 @@ target="_blank" class="w3-hover-text-green">w3.css</a></p>
   <!-- End footer -->
   </footer>
 
-
-
 <!-- END PAGE CONTENT -->
-</div>
-
-</body>
 </html>
