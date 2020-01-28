@@ -12,8 +12,27 @@ family=Montserrat">
 awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-.mySlides {display: none}
+
+body, html {
+  height: 100%;
+  color: #000000;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('https://je-suis-tm.github.io/img/background.jpg');
+  min-height:160%;
+}
+
+.w3-panel {
+  margin-top:-15%;
+}
 </style>
+  
 <head>
   <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/je-suis-tm/je-suis-tm.github.io/master/img/favicon.ico" />
 </head>
@@ -105,23 +124,25 @@ padding-large" >ABOUT</a>
 
 
 
+<!-- Header/Home -->
+  
+<div class="bgimg-1 w3-display-container">
+  <div class="w3-panel w3-display-middle">
+    <div class="w3-opacity-min w3-center">
+    <span class="w3-xxxlarge w3-text-white w3-wide ">T.M.
+    </div>
+    <div class="w3-opacity-min w3-center">
+    <span class="w3-large w3-text-white ">Half Researcher, Half Developer.</span></div>
+  </div>  
+</div>
+
+
+
 <!-- Page Content -->
-<div class="w3-padding-large" id="main">
-  <!-- Header/Home -->
-  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-    <h1 class="w3-jumbo"><span class="w3-hide-small">T.M.</span></h1>
-    <p>Half Researcher, Half Developer.</p>
-    <img src="/img/background.jpg" alt="background" class="w3-image" width="992" 
-
-height="1108">
-  </header>
-
-
-
   <!-- The Main Section -->
-  <div class="w3-container w3-white w3-content w3-centre w3-padding-64" 
-
-id="band">
+<div class="w3-container w3-black w3-centre w3-margin-top" >
+<div class="w3-container w3-white w3-content w3-justify w3-margin-top" >
+  
     <h2 class="w3-wide">Machine Learning - Naive Bayes Optimization</h2>
     <br>
     <p class="w3-justify">Have you experienced classifying a large amount of text data via Naive Bayes?</p>
@@ -138,11 +159,11 @@ id="band">
 
 xxlarge"></i></a>
   <!-- End Main Section -->   
-  </div>	
-
-
-
-  <hr>  
+</div>	  
+</div>
+</body>
+<hr> 
+  
   <!-- Footer -->
   <footer class="w3-container w3-card w3-black w3-margin-bottom">
     <a href="https://github.com/je-suis-tm" target="_blank"><i class="fa fa-
@@ -161,10 +182,5 @@ target="_blank" class="w3-hover-text-green">w3.css</a></p>
   <!-- End footer -->
   </footer>
 
-
-
 <!-- END PAGE CONTENT -->
-</div>
-
-</body>
 </html>
