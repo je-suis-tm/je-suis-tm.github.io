@@ -1,0 +1,159 @@
+
+
+<!DOCTYPE html>
+<html>
+<title>Web Scraping - Sign-in</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?
+
+family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-
+
+awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+
+body, html {
+  height: 100%;
+  color: #000000;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('https://je-suis-tm.github.io/img/background.jpg');
+  min-height:160%;
+}
+
+.w3-panel {
+  margin-top:-15%;
+}
+</style>
+  
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/je-suis-tm/je-suis-tm.github.io/master/img/favicon.ico" />
+</head>
+<body class="w3-black">
+
+
+<!-- Navbar -->
+
+<div >
+<div class="w3-row w3-large w3-black" >  
+
+<div class="w3-col s2">
+<a href="https://je-suis-tm.github.io/#" class="w3-block w3-button ">
+HOME&emsp;<i class="fa fa-home w3-xxlarge w3-xxlarge w3-center"></i></a>
+</div>      
+
+<div class="w3-col s2">
+<a href="https://je-suis-tm.github.io/#recent" class="w3-block w3-button ">
+RECENT&emsp;<i class="fa fa-newspaper-o w3-xxlarge w3-center"></i></a>
+</div>
+  
+<div class="w3-col s2">
+<a href="https://je-suis-tm.github.io/#upcoming" class="w3-block w3-button ">
+UPCOMING&emsp;<i class="fa fa-rocket w3-xxlarge w3-center"></i></a>
+</div> 
+
+<div class="w3-col s2">
+<a href="https://je-suis-tm.github.io/#about" class="w3-block w3-button ">
+ABOUT&emsp;<i class="fa fa-trademark w3-xxlarge w3-center"></i></a>
+</div>
+
+<div class="w3-col s2">
+<a href="https://je-suis-tm.github.io/#contact" class="w3-block w3-button ">
+CONTACT&emsp;<i class="fa fa-send w3-xxlarge w3-center"></i></a>
+</div>
+
+<div class="w3-col s2">
+<a href="https://je-suis-tm.github.io/archive" class="w3-block w3-button ">
+ARCHIVE&emsp;<i class="fa fa-briefcase w3-xxlarge w3-center"></i></a>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the 
+
+navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-
+
+medium w3-top" style="margin-top:46px">
+  <a href="https://je-suis-tm.github.io" class="w3-bar-item w3-button w3-
+
+padding-large" >HOME</a>
+  <a href="https://je-suis-tm.github.io/#recent" class="w3-bar-item w3-button w3
+
+-padding-large" >RECENT</a>
+  <a href="https://je-suis-tm.github.io/#upcoming" class="w3-bar-item w3-button 
+
+w3-padding-large" >UPCOMING</a>
+  <a href="https://je-suis-tm.github.io/#about" class="w3-bar-item w3-button w3-
+
+padding-large" >ABOUT</a>
+  <a href="https://je-suis-tm.github.io#contact" class="w3-bar-item w3-button w3
+
+-padding-large" >CONTACT</a>
+</div>
+
+
+<!-- Header/Home -->
+  
+<div class="bgimg-1 w3-display-container">
+  <div class="w3-panel w3-display-middle">
+    <div class="w3-opacity-min w3-center">
+    <span class="w3-xxxlarge w3-text-white w3-wide ">T.M.
+    </div>
+    <div class="w3-opacity-min w3-center">
+    <span class="w3-large w3-text-white ">Half Researcher, Half Developer.</span></div>
+  </div>  
+</div>
+
+
+
+<!-- Page Content -->
+  <!-- The Main Section -->
+<div class="w3-container w3-black w3-centre w3-margin-top" >
+<div class="w3-container w3-white w3-content w3-justify w3-margin-top" >
+    <br><h2 class="w3-wide">Sign-in</h2><br><p class="w3-justify">Congrats! I assume you have mastered entry-level web scraping. Since we come to more advanced level, we will have to deal with more complex issues. In this chapter, we will talk about how to sign into a website in Python. Please bear in mind that we will only discuss login without any captcha or other Turing Test (google's reCAPTCHA is one of the worst). It doesn't mean captcha is the dead end for scraping. There are two ways to bypass captcha, manually downloading image for human recognition or using external package to do image recognition. You will find something <a href=https://www.tutorialspoint.com/python_web_scraping/python_web_scraping_processing_captcha.htm>here</a>.</p><p class="w3-justify">Well, login is no magic. Traditionally it is posting a form consists of critical information to a certain address. When each piece of information matches the record in website backend database, the website will assign a token to you. Token is like security clearance. It enables you to visit the content that requires login. Always remember to insert a token into the header when you got one after authentication.</p><p class="w3-justify">Big companies like Facebook or Twitter use a slightly different approach called CSRF token. The website sends a token to you before sign-in. It goes without saying that CSRF token must be presented at login. There will be no more token assigned to you after authentication because the cookies will take care of everything. Think of CSRF as buying TTP in Madrid, once you tap it on the card reader to pass the gate, you do not need it to visit any station or exit the metro system. </p><p class="w3-justify">Let's look at a simple case, a website called CQF. This great website features many free reports and videos on quantitative finance. But, there is always a but, the annoying part is resources are exclusive to registered users. Thus, we will be forced to include the login part in our python scraper. As usual, we always take a quick look at the website before coding. When we log in, we need to inspect element to seek for the login activity (if you forget how to do this, please refer to chapter 2 in the beginner level). There are quite a few activities when we log in, right? The quickest way to distinguish the login from the rest is to search your username and password. Because username and password are normally unhashed. </p><p class="w3-justify">Now that we have located the login activity, there are three key things we need to keep an eye on. The first one is Request URL. It will be the URL we post our form to. Pay attention to Request Method. The login is often POST method, rather than GET method.</p><br><img src="https://raw.githubusercontent.com/je-suis-tm/web-scraping/master/preview/cqf%20login%20link.PNG" class="w3-image" width="600" height="450"><p class="w3-justify">The second one will be Request Headers. Headers are great tools to disguise your scraping as an internet browser. They are called headers because you would spend most of your time scratching your head to get them right. We can observe tons of information in the headers. Only a small bit of them are genuinely useful to the login. An effective way is to exclude cookies and anything contains hashed information. Nonetheless, this is not always the case. Some websites filter out machines by valid cookies with hashed information for login. If you accidentally exclude those headers, you may trigger the alarm of the website and end up with some form of captcha.</p><br><p><small><i>My apologies for the redaction in these headers. The redaction plays a vital role here to protect my privacy. It turns my headers into some confidential documents from MI6.</small></i></p><br><br><img src="https://raw.githubusercontent.com/je-suis-tm/web-scraping/master/preview/cqf%20request%20header.PNG" class="w3-image" width="600" height="450"><p class="w3-justify">The last but not least one will be Form Data. It contains the critical information for authentication, such as username and password. </p><br><img src="https://raw.githubusercontent.com/je-suis-tm/web-scraping/master/preview/cqf%20post%20form.PNG" class="w3-image" width="600" height="450"><p class="w3-justify">There is another part called Query String Parameters. We do not encounter it very often at login. It is more frequently seen in data query though.</p><br><img src="https://raw.githubusercontent.com/je-suis-tm/web-scraping/master/preview/cqf%20query.PNG" class="w3-image" width="600" height="450"><p class="w3-justify">Once we have gathered everything we need, we can simply do</p><p class="w3-justify"><code class="w3-codespan"><p class="w3-justify">session.post(url,headers={'iamnotarobot':True},</p></code><code class="w3-codespan"><p class="w3-justify">             data={'username':'lanarhodes4avn',</p></code><code class="w3-codespan"><p class="w3-justify">                   'password':'i<3ellahughes'},</p></code><code class="w3-codespan"><p class="w3-justify">             params={'id':'jia.lissa'})</p></code></p><p class="w3-justify">The session will automatically update its cookie after posting a form. Generally speaking, the website gives a token in return (CQF does not). And the response is likely to be in JSON format, then we do </p><p class="w3-justify"><code class="w3-codespan"><p class="w3-justify">session.headers.update({'token':response.json()['token']})</p></code></p><p class="w3-justify">We have obtained the security clearance now. We can snoop around every corner as we please. Quite simple, isn't it? For more details, feel free to click <a href=https://github.com/je-suis-tm/web-scraping/blob/master/CQF.py>CQF</a>. If you crave for a bigger challenge, why don't you start with scraping a private instagram account?</p>
+​
+    <br>
+    <br>
+    <p>Click the icon below to be redirected to GitHub Repository</p>
+    <a href="https://github.com/je-suis-tm/web-scraping#1-sign-in-cqf" target="_blank"><i class="fa fa-github-alt fa-fw w3-
+
+xxlarge"></i></a>
+  <!-- End Main Section -->   
+</div>	  
+</div>
+</body>
+<hr> 
+  
+  <!-- Footer -->
+  <footer class="w3-container w3-card w3-black w3-margin-bottom">
+    <a href="https://github.com/je-suis-tm" target="_blank"><i class="fa fa-
+
+github-square w3-hover-opacity"></i></a>
+    <i class="fa fa-linkedin-square w3-hover-opacity"></i>
+    <i class="fa fa-facebook-square w3-hover-opacity"></i>
+    <i class="fa fa-twitter-square w3-hover-opacity"></i>
+    <i class="fa fa-whatsapp w3-hover-opacity"></i>
+    <i class="fa fa-snapchat-square w3-hover-opacity"></i>
+    <p class="w3-small">I can change the footer, but this template is really 
+
+fabulous, it is powered by <a href="https://www.w3schools.com/w3css/default.asp" 
+
+target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <!-- End footer -->
+  </footer>
+
+<!-- END PAGE CONTENT -->
+</html>
