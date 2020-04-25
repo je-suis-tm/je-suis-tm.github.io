@@ -1,0 +1,207 @@
+
+
+<!DOCTYPE html>
+<html>
+<title>Web Scraping - Regular Expression</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?
+
+family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-
+
+awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+
+body, html {
+  height: 100%;
+  color: #000000;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('https://je-suis-tm.github.io/img/background.jpg');
+  min-height:160%;
+}
+
+.w3-panel {
+  margin-top:-15%;
+}
+</style>
+  
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/je-suis-tm/je-suis-tm.github.io/master/img/favicon.ico" />
+</head>
+<body class="w3-black">
+
+
+<!-- Navbar -->
+
+<div >
+<div class="w3-row w3-large w3-black" >  
+
+<div class="w3-col s2">
+<a href="https://je-suis-tm.github.io/#" class="w3-block w3-button ">
+HOME&emsp;<i class="fa fa-home w3-xxlarge w3-xxlarge w3-center"></i></a>
+</div>      
+
+<div class="w3-col s2">
+<a href="https://je-suis-tm.github.io/#recent" class="w3-block w3-button ">
+RECENT&emsp;<i class="fa fa-newspaper-o w3-xxlarge w3-center"></i></a>
+</div>
+  
+<div class="w3-col s2">
+<a href="https://je-suis-tm.github.io/#upcoming" class="w3-block w3-button ">
+UPCOMING&emsp;<i class="fa fa-rocket w3-xxlarge w3-center"></i></a>
+</div> 
+
+<div class="w3-col s2">
+<a href="https://je-suis-tm.github.io/#about" class="w3-block w3-button ">
+ABOUT&emsp;<i class="fa fa-trademark w3-xxlarge w3-center"></i></a>
+</div>
+
+<div class="w3-col s2">
+<a href="https://je-suis-tm.github.io/#contact" class="w3-block w3-button ">
+CONTACT&emsp;<i class="fa fa-send w3-xxlarge w3-center"></i></a>
+</div>
+
+<div class="w3-col s2">
+<a href="https://je-suis-tm.github.io/archive" class="w3-block w3-button ">
+ARCHIVE&emsp;<i class="fa fa-briefcase w3-xxlarge w3-center"></i></a>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the 
+
+navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-
+
+medium w3-top" style="margin-top:46px">
+  <a href="https://je-suis-tm.github.io" class="w3-bar-item w3-button w3-
+
+padding-large" >HOME</a>
+  <a href="https://je-suis-tm.github.io/#recent" class="w3-bar-item w3-button w3
+
+-padding-large" >RECENT</a>
+  <a href="https://je-suis-tm.github.io/#upcoming" class="w3-bar-item w3-button 
+
+w3-padding-large" >UPCOMING</a>
+  <a href="https://je-suis-tm.github.io/#about" class="w3-bar-item w3-button w3-
+
+padding-large" >ABOUT</a>
+  <a href="https://je-suis-tm.github.io#contact" class="w3-bar-item w3-button w3
+
+-padding-large" >CONTACT</a>
+</div>
+
+
+<!-- Header/Home -->
+  
+<div class="bgimg-1 w3-display-container">
+  <div class="w3-panel w3-display-middle">
+    <div class="w3-opacity-min w3-center">
+    <span class="w3-xxxlarge w3-text-white w3-wide ">T.M.
+    </div>
+    <div class="w3-opacity-min w3-center">
+    <span class="w3-large w3-text-white ">Half Researcher, Half Developer.</span></div>
+  </div>  
+</div>
+
+
+
+<!-- Page Content -->
+  <!-- The Main Section -->
+<div class="w3-container w3-black w3-centre w3-margin-top" >
+<div class="w3-container w3-white w3-content w3-justify w3-margin-top" >
+    <br><h2 class="w3-wide">Regular Expression</h2><br><p class="w3-justify">Sometimes, navigate through HTML parse tree may not get you what you need. For instance, you have some information inside a javascript function. You don't really want the whole bloc. All you care about is API key. </p><br><img src="https://raw.githubusercontent.com/je-suis-tm/web-scraping/master/preview/shfe%20javascript.png" class="w3-image" width="600" height="450"><p class="w3-justify">Or you got multiple titles. You only care about the numbers inside these titles. You are unable to use array slicing with indices because numbers don't appear in fixed positions. Those numbers can even be negative.</p><br><img src="https://raw.githubusercontent.com/je-suis-tm/web-scraping/master/preview/shfe%20regex.png" class="w3-image" width="600" height="450"><p class="w3-justify">Helpless, right? Not if you know regular expression! We will call it regex in the following context. Think of regex as another simple language as HTML. In Python, there is a built-in library called <span style="background-color: #f2ece1;">re</span>. There are a couple of functions inside this module. But for web scraping, <span style="background-color: #f2ece1;">re.findall</span> and <span style="background-color: #f2ece1;">re.search</span> are commonly used. <span style="background-color: #f2ece1;">re.findall</span> returns a list of all the matched words and <span style="background-color: #f2ece1;">re.search</span> returns a regex object. We simply apply attribute <span style="background-color: #f2ece1;">re.search('','').group()</span> to concatenate the text together.</p><p class="w3-justify">As for the regex itself, there are a few useful tips. <span style="background-color: #f2ece1;">(?<=)</span> and <span style="background-color: #f2ece1;">(?=)</span> are my favorite pair. They are called look-ahead and look-behind. If the content you are looking for is always behind a comma and before a question mark. You can simply do</p><p class="w3-justify"><code class="w3-codespan"><p class="w3-justify">(?<=\,)\S*(?=\?)</p></code></p><p class="w3-justify">Punctuation marks have special meanings in regex. If you need to specify comma instead of special meanings, you always remember to put a slash before it. <span style="background-color: #f2ece1;">\S*</span> refer to all the non-whitespace characters. Characters have no special meanings in regex. But when you put a slash before characters, all of sudden they have special meanings, quite the opposite to punctuation marks. </p><p class="w3-justify">The full table of my useful tips is here.</p><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Syntax</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>\d*</td>
+      <td>All the numbers. If we remove asterisk mark, w...</td>
+    </tr>
+    <tr>
+      <td>\w*</td>
+      <td>All the characters, numbers and underscore marks</td>
+    </tr>
+    <tr>
+      <td>\S*</td>
+      <td>All the non-whitespace characters</td>
+    </tr>
+    <tr>
+      <td>-?\d*\,?\d*</td>
+      <td>All the numbers, potential negative signs and ...</td>
+    </tr>
+    <tr>
+      <td>\d{4}</td>
+      <td>4 digits</td>
+    </tr>
+    <tr>
+      <td>^Tori</td>
+      <td>Anything starts with Tori</td>
+    </tr>
+    <tr>
+      <td>Black$</td>
+      <td>Anything ends with Black</td>
+    </tr>
+    <tr>
+      <td>[a-z0-9]</td>
+      <td>Anything involves lower case characters or digits</td>
+    </tr>
+    <tr>
+      <td>[^A-Z]</td>
+      <td>Anything except upper case characters</td>
+    </tr>
+    <tr>
+      <td>(?&lt;=\,)\S*(?=\?)</td>
+      <td>Anything behind a comma and before a question ...</td>
+    </tr>
+  </tbody>
+</table><p class="w3-justify">You can check <a href=https://www.w3schools.com/python/python_regex.asp>w3schools</a> for more details on regex syntax. </p><p class="w3-justify">In this chapter, the example is to navigate through a JSON file by regex (way faster than parsed as a pandas dataframe). Recalled from the previous chapter, JSON file is sort of dictionaries inside dictionaries. Normally we access the value by multiple keys. If you think of JSON file as a tree ADT, we need to know every node (key) from root to parent to go to the child node (value). Now we convert the whole structure to string and search for certain patterns via regex. With look-ahead and look-behind pair, knowing a parent node is fairly sufficient to get the value. Don't believe me? Feel free to take a look at <a href=https://github.com/je-suis-tm/web-scraping/blob/master/SHFE.py>SHFE</a> for coding details.</p>
+    <br>
+    <br>
+    <p>Click the icon below to be redirected to GitHub Repository</p>
+    <a href="https://github.com/je-suis-tm/web-scraping#3-regular-expression-shfe" target="_blank"><i class="fa fa-github-alt fa-fw w3-
+
+xxlarge"></i></a>
+  <!-- End Main Section -->   
+</div>	  
+</div>
+</body>
+<hr> 
+  
+  <!-- Footer -->
+  <footer class="w3-container w3-card w3-black w3-margin-bottom">
+    <a href="https://github.com/je-suis-tm" target="_blank"><i class="fa fa-
+
+github-square w3-hover-opacity"></i></a>
+    <i class="fa fa-linkedin-square w3-hover-opacity"></i>
+    <i class="fa fa-facebook-square w3-hover-opacity"></i>
+    <i class="fa fa-twitter-square w3-hover-opacity"></i>
+    <i class="fa fa-whatsapp w3-hover-opacity"></i>
+    <i class="fa fa-snapchat-square w3-hover-opacity"></i>
+    <p class="w3-small">I can change the footer, but this template is really 
+
+fabulous, it is powered by <a href="https://www.w3schools.com/w3css/default.asp" 
+
+target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <!-- End footer -->
+  </footer>
+
+<!-- END PAGE CONTENT -->
+</html>
