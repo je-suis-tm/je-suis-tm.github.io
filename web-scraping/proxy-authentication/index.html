@@ -1,0 +1,158 @@
+
+
+<!DOCTYPE html>
+<html>
+<title>Web Scraping - Proxy Authentication</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?
+
+family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-
+
+awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+
+body, html {
+  height: 100%;
+  color: #000000;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('https://je-suis-tm.github.io/img/background.jpg');
+  min-height:160%;
+}
+
+.w3-panel {
+  margin-top:-15%;
+}
+</style>
+  
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/je-suis-tm/je-suis-tm.github.io/master/img/favicon.ico" />
+</head>
+<body class="w3-black">
+
+
+<!-- Navbar -->
+
+<div >
+<div class="w3-row w3-large w3-black" >  
+
+<div class="w3-col s2">
+<a href="https://je-suis-tm.github.io/#" class="w3-block w3-button ">
+HOME&emsp;<i class="fa fa-home w3-xxlarge w3-xxlarge w3-center"></i></a>
+</div>      
+
+<div class="w3-col s2">
+<a href="https://je-suis-tm.github.io/#recent" class="w3-block w3-button ">
+RECENT&emsp;<i class="fa fa-newspaper-o w3-xxlarge w3-center"></i></a>
+</div>
+  
+<div class="w3-col s2">
+<a href="https://je-suis-tm.github.io/#upcoming" class="w3-block w3-button ">
+UPCOMING&emsp;<i class="fa fa-rocket w3-xxlarge w3-center"></i></a>
+</div> 
+
+<div class="w3-col s2">
+<a href="https://je-suis-tm.github.io/#about" class="w3-block w3-button ">
+ABOUT&emsp;<i class="fa fa-trademark w3-xxlarge w3-center"></i></a>
+</div>
+
+<div class="w3-col s2">
+<a href="https://je-suis-tm.github.io/#contact" class="w3-block w3-button ">
+CONTACT&emsp;<i class="fa fa-send w3-xxlarge w3-center"></i></a>
+</div>
+
+<div class="w3-col s2">
+<a href="https://je-suis-tm.github.io/archive" class="w3-block w3-button ">
+ARCHIVE&emsp;<i class="fa fa-briefcase w3-xxlarge w3-center"></i></a>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the 
+
+navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-
+
+medium w3-top" style="margin-top:46px">
+  <a href="https://je-suis-tm.github.io" class="w3-bar-item w3-button w3-
+
+padding-large" >HOME</a>
+  <a href="https://je-suis-tm.github.io/#recent" class="w3-bar-item w3-button w3
+
+-padding-large" >RECENT</a>
+  <a href="https://je-suis-tm.github.io/#upcoming" class="w3-bar-item w3-button 
+
+w3-padding-large" >UPCOMING</a>
+  <a href="https://je-suis-tm.github.io/#about" class="w3-bar-item w3-button w3-
+
+padding-large" >ABOUT</a>
+  <a href="https://je-suis-tm.github.io#contact" class="w3-bar-item w3-button w3
+
+-padding-large" >CONTACT</a>
+</div>
+
+
+<!-- Header/Home -->
+  
+<div class="bgimg-1 w3-display-container">
+  <div class="w3-panel w3-display-middle">
+    <div class="w3-opacity-min w3-center">
+    <span class="w3-xxxlarge w3-text-white w3-wide ">T.M.
+    </div>
+    <div class="w3-opacity-min w3-center">
+    <span class="w3-large w3-text-white ">Half Researcher, Half Developer.</span></div>
+  </div>  
+</div>
+
+
+
+<!-- Page Content -->
+  <!-- The Main Section -->
+<div class="w3-container w3-black w3-centre w3-margin-top" >
+<div class="w3-container w3-white w3-content w3-justify w3-margin-top" >
+    <br><h2 class="w3-wide">Proxy Authentication</h2><br><p class="w3-justify">Proxy, it has always been associated with censorship. It is commonly used to access the websites blocked by some parties (e.g. governments) or it is enforced by some parties (e.g. corporates) for the purpose of surveillance. Either way, it is against liberté. Yet, it's not my place to make a moral judgement. For whatever reason to use proxy, the authentication can become a huge pain in the ass. I have literally spent hours scratching my head to figure out why my code doesn't work. Here are a few key points to make our life easier.</p><br><h3 id="url-protocol,-domain-and-port">URL Protocol, Domain and Port</h3><br><p class="w3-justify">It goes without saying how important proxy URL is. Protocol is usually <span style="background-color: #f2ece1;">http</span> but occasionally <span style="background-color: #f2ece1;">https</span>. Domain could be a bunch of number (e.g. 192.168.1.1) or a normal one (e.g. myproxy.com). As for the port, it can only be numbers (e.g. 8080).</p><p class="w3-justify">If you don't have URL information, you can always try to check Local Area Network Settings. Assuming you are using Windows, you can go to internet options in IE (in windows 10, you can find it in Windows Settings - Network & Internet - Proxy)</p><br><img src="https://raw.githubusercontent.com/je-suis-tm/web-scraping/master/preview/proxy%20ie.png" class="w3-image" width="600" height="450"><p class="w3-justify">Click connections on the top panel then click LAN settings</p><br><img src="https://raw.githubusercontent.com/je-suis-tm/web-scraping/master/preview/proxy%20lan.PNG" class="w3-image" width="600" height="450"><p class="w3-justify">You could find the proxy setup here</p><br><img src="https://raw.githubusercontent.com/je-suis-tm/web-scraping/master/preview/proxy%20domain.PNG" class="w3-image" width="600" height="450"><p class="w3-justify">If not, you have to contact your local IT administrator. Sometimes python may be going through proxy by default. We could pass empty dictionary to <span style="background-color: #f2ece1;">session.proxies</span> to get things working. </p><p class="w3-justify">Once we obtain the proxy URL, we can do</p><p class="w3-justify"><code class="w3-codespan"><p class="w3-justify">session.proxies={'http':'http://domain:port'}</p></code></p><br><h3 id="username-and-password">Username and Password</h3><br><p class="w3-justify">Proxy commonly requires authentication. The package we are using offers three types of authentication, HTTPBasicAuth, HTTPDigestAuth and HTTPProxyAuth. For simplicity, we just do</p><p class="w3-justify"><code class="w3-codespan"><p class="w3-justify">session.auth=requests.auth.HTTPProxyAuth('username',</p></code><code class="w3-codespan"><p class="w3-justify">                                         'password')</p></code></p><br><h3 id="certificates">Certificates</h3><br><p class="w3-justify">Given correct username and password, you still get <span style="background-color: #f2ece1;">TimeoutError</span> thrown to your face? Or what exactly is this <span style="background-color: #f2ece1;">SSLError</span>? You are not alone! I have been hung out to dry for days simply because I neglect the role of certificates. The library <span style="background-color: #f2ece1;">requests</span> provide two types of certificates, SSL and client side. They are both handy to use. For client side certificates, we can do</p><p class="w3-justify"><code class="w3-codespan"><p class="w3-justify">session.cert='path/proxy.cer'</p></code></p><p class="w3-justify">For SSL certificates, we can do</p><p class="w3-justify"><code class="w3-codespan"><p class="w3-justify">session.verify='path/proxy.cer'</p></code></p><p class="w3-justify">If you don't know where to find certificates or your IT administrator does not cooperate, additionally, there is a dangerous shortcut. We simply disable SSL verification at the risk of man in the middle attack (by raising this issue, your IT admin shall comply, it works every time &#x1f60f; ). There is also a tool called <a href=http://cntlm.sourceforge.net>CNTLM</a> that helps.</p><p class="w3-justify"><code class="w3-codespan"><p class="w3-justify">session.verify=False</p></code></p><p class="w3-justify">Now we can harness the power of web-scraping!</p><p class="w3-justify"><code class="w3-codespan"><p class="w3-justify">session.get('https://www.lepoint.fr/gastronomie/')</p></code></p>
+    <br>
+    <br>
+    <p>Click the icon below to be redirected to GitHub Repository</p>
+    <a href="https://github.com/je-suis-tm/web-scraping#1-proxy-authentication" target="_blank"><i class="fa fa-github-alt fa-fw w3-
+
+xxlarge"></i></a>
+  <!-- End Main Section -->   
+</div>	  
+</div>
+</body>
+<hr> 
+  
+  <!-- Footer -->
+  <footer class="w3-container w3-card w3-black w3-margin-bottom">
+    <a href="https://github.com/je-suis-tm" target="_blank"><i class="fa fa-
+
+github-square w3-hover-opacity"></i></a>
+    <i class="fa fa-linkedin-square w3-hover-opacity"></i>
+    <i class="fa fa-facebook-square w3-hover-opacity"></i>
+    <i class="fa fa-twitter-square w3-hover-opacity"></i>
+    <i class="fa fa-whatsapp w3-hover-opacity"></i>
+    <i class="fa fa-snapchat-square w3-hover-opacity"></i>
+    <p class="w3-small">I can change the footer, but this template is really 
+
+fabulous, it is powered by <a href="https://www.w3schools.com/w3css/default.asp" 
+
+target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <!-- End footer -->
+  </footer>
+
+<!-- END PAGE CONTENT -->
+</html>
