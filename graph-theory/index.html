@@ -1,17 +1,17 @@
-
 <!DOCTYPE html>
 <html>
-<title>Graph Theory</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?
-family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-
-awesome/4.7.0/css/font-awesome.min.css">
-
-<style>
-body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+ <title>
+  Graph Theory
+ </title>
+ <meta charset="utf-8"/>
+ <meta content="width=device-width, initial-scale=1" name="viewport"/>
+ <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet"/>
+ <link href="https://fonts.googleapis.com/css?
+family=Montserrat" rel="stylesheet"/>
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-
+awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+ <style>
+  body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
 body, html {
   height: 100%;
@@ -31,134 +31,153 @@ body, html {
 .w3-panel {
   margin-top:-15%;
 }
-</style>
-  
-<head>
-  <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/je-suis-tm/je-suis-tm.github.io/master/img/favicon.ico" />
-</head>
-<body class="w3-black">
-
-
-
-<!-- Navbar -->
-
-<div >
-<div class="w3-row w3-large w3-black" >  
-
-<div class="w3-col s2">
-<a href="https://je-suis-tm.github.io/#" class="w3-block w3-button ">
-HOME&emsp;<i class="fa fa-home w3-xxlarge w3-xxlarge w3-center"></i></a>
-</div>      
-
-<div class="w3-col s2">
-<a href="https://je-suis-tm.github.io/#recent" class="w3-block w3-button ">
-RECENT&emsp;<i class="fa fa-newspaper-o w3-xxlarge w3-center"></i></a>
-</div>
-  
-<div class="w3-col s2">
-<a href="https://je-suis-tm.github.io/#upcoming" class="w3-block w3-button ">
-UPCOMING&emsp;<i class="fa fa-rocket w3-xxlarge w3-center"></i></a>
-</div> 
-
-<div class="w3-col s2">
-<a href="https://je-suis-tm.github.io/#about" class="w3-block w3-button ">
-ABOUT&emsp;<i class="fa fa-trademark w3-xxlarge w3-center"></i></a>
-</div>
-
-<div class="w3-col s2">
-<a href="https://je-suis-tm.github.io/#contact" class="w3-block w3-button ">
-CONTACT&emsp;<i class="fa fa-send w3-xxlarge w3-center"></i></a>
-</div>
-
-<div class="w3-col s2">
-<a href="https://je-suis-tm.github.io/archive" class="w3-block w3-button ">
-ARCHIVE&emsp;<i class="fa fa-briefcase w3-xxlarge w3-center"></i></a>
-</div>
-
-</div>
-</div>
-</div>
-
-
+ </style>
+ <head>
+  <link href="https://raw.githubusercontent.com/je-suis-tm/je-suis-tm.github.io/master/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  </link>
+ </head>
+ <body class="w3-black">
+  <!-- Navbar -->
+  <div>
+   <div class="w3-row w3-large w3-black">
+    <div class="w3-col s2">
+     <a class="w3-block w3-button " href="https://je-suis-tm.github.io/#">
+      HOME
+      <i class="fa fa-home w3-xxlarge w3-xxlarge w3-center">
+      </i>
+     </a>
+    </div>
+    <div class="w3-col s2">
+     <a class="w3-block w3-button " href="https://je-suis-tm.github.io/#recent">
+      RECENT
+      <i class="fa fa-newspaper-o w3-xxlarge w3-center">
+      </i>
+     </a>
+    </div>
+    <div class="w3-col s2">
+     <a class="w3-block w3-button " href="https://je-suis-tm.github.io/#upcoming">
+      UPCOMING
+      <i class="fa fa-rocket w3-xxlarge w3-center">
+      </i>
+     </a>
+    </div>
+    <div class="w3-col s2">
+     <a class="w3-block w3-button " href="https://je-suis-tm.github.io/#about">
+      ABOUT
+      <i class="fa fa-trademark w3-xxlarge w3-center">
+      </i>
+     </a>
+    </div>
+    <div class="w3-col s2">
+     <a class="w3-block w3-button " href="https://je-suis-tm.github.io/#contact">
+      CONTACT
+      <i class="fa fa-send w3-xxlarge w3-center">
+      </i>
+     </a>
+    </div>
+    <div class="w3-col s2">
+     <a class="w3-block w3-button " href="https://je-suis-tm.github.io/archive">
+      ARCHIVE
+      <i class="fa fa-briefcase w3-xxlarge w3-center">
+      </i>
+     </a>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
 <!-- Navbar on small screens (remove the onclick attribute if you want the 
 
 navbar to always show on top of the content when clicking on the links) -->
-<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-
-
-medium w3-top" style="margin-top:46px">
-  <a href="https://je-suis-tm.github.io" class="w3-bar-item w3-button w3-
-
-padding-large" >HOME</a>
-  <a href="https://je-suis-tm.github.io/#recent" class="w3-bar-item w3-button w3
-
--padding-large" >RECENT</a>
-  <a href="https://je-suis-tm.github.io/#upcoming" class="w3-bar-item w3-button 
-
-w3-padding-large" >UPCOMING</a>
-  <a href="https://je-suis-tm.github.io/#about" class="w3-bar-item w3-button w3-
-
-padding-large" >ABOUT</a>
-  <a href="https://je-suis-tm.github.io#contact" class="w3-bar-item w3-button w3
-
--padding-large" >CONTACT</a>
+<div class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide- medium w3-top" id="navDemo" style="margin-top:46px">
+ <a class="w3-bar-item w3-button w3- padding-large" href="https://je-suis-tm.github.io">
+  HOME
+ </a>
+ <a class="w3-bar-item w3-button w3 -padding-large" href="https://je-suis-tm.github.io/#recent">
+  RECENT
+ </a>
+ <a class="w3-bar-item w3-button w3-padding-large" href="https://je-suis-tm.github.io/#upcoming">
+  UPCOMING
+ </a>
+ <a class="w3-bar-item w3-button w3- padding-large" href="https://je-suis-tm.github.io/#about">
+  ABOUT
+ </a>
+ <a class="w3-bar-item w3-button w3 -padding-large" href="https://je-suis-tm.github.io#contact">
+  CONTACT
+ </a>
 </div>
-
-
 <!-- Header/Home -->
-  
-
 <div class="bgimg-1 w3-display-container">
-  <div class="w3-panel w3-display-middle">
-    <div class="w3-opacity-min w3-center">
-    <span class="w3-xxxlarge w3-text-white w3-wide ">T.M.
-    </div>
-    <div class="w3-opacity-min w3-center">
-    <span class="w3-large w3-text-white ">Half Researcher, Half Developer.</span></div>
-  </div>  
+ <div class="w3-panel w3-display-middle">
+  <div class="w3-opacity-min w3-center">
+   <span class="w3-xxxlarge w3-text-white w3-wide ">
+    T.M.
+   </span>
+  </div>
+  <div class="w3-opacity-min w3-center">
+   <span class="w3-large w3-text-white ">
+    Half Researcher, Half Developer.
+   </span>
+  </div>
+ </div>
 </div>
-
-
-
 <!-- Page Content -->
-  <!-- The Main Section -->
-<div class="w3-container w3-black w3-centre w3-margin-top" >
-<div class="w3-container w3-white w3-content w3-justify w3-margin-top" >
-    <br>
-    <h1 class="w3-text-black">By Name</h1>
-    <br>
-    <ul>
-    <li><a href="/graph-theory/epidemic-outbreak/">Epidemic Outbreak</a></li>
-    <br>
-    <li><a href="/graph-theory/text-mining/">Text Mining</a></li>
-    <br>
-    <li><a href="/graph-theory/portfolio-optimization/">Portfolio Optimization</a></li>
-    </ul>
-    <br>
-    
-  <!-- End Main Section -->   
-</div>	  
+<!-- The Main Section -->
+<div class="w3-container w3-black w3-centre w3-margin-top">
+ <div class="w3-container w3-white w3-content w3-justify w3-margin-top">
+  <br/>
+  <h1 class="w3-text-black">
+   By Name
+  </h1>
+  <br/>
+  <ul>
+   <li>
+    <a href="/graph-theory/epidemic-outbreak/">
+     Epidemic Outbreak
+    </a>
+   </li>
+   <br/>
+   <li>
+    <a href="/graph-theory/text-mining/">
+     Text Mining
+    </a>
+   </li>
+   <br/>
+   <li>
+    <a href="/graph-theory/portfolio-optimization/">
+     Portfolio Optimization
+    </a>
+   </li>
+  </ul>
+  <br/>
+  <!-- End Main Section -->
+ </div>
 </div>
-</body>
-<hr>  
-  
-  <!-- Footer -->
-  <footer class="w3-container w3-card w3-black w3-margin-bottom">
-    <a href="https://github.com/je-suis-tm" target="_blank"><i class="fa fa-
+<hr/>
+<!-- Footer -->
+<footer class="w3-container w3-card w3-black w3-margin-bottom">
+ <a href="https://github.com/je-suis-tm" target="_blank">
+  <i class="fa fa- github-square w3-hover-opacity">
+  </i>
+ </a>
+ <i class="fa fa-linkedin-square w3-hover-opacity">
+ </i>
+ <i class="fa fa-facebook-square w3-hover-opacity">
+ </i>
+ <i class="fa fa-twitter-square w3-hover-opacity">
+ </i>
+ <i class="fa fa-whatsapp w3-hover-opacity">
+ </i>
+ <i class="fa fa-snapchat-square w3-hover-opacity">
+ </i>
+ <p class="w3-small">
+  I can change the footer, but this template is really 
 
-github-square w3-hover-opacity"></i></a>
-    <i class="fa fa-linkedin-square w3-hover-opacity"></i>
-    <i class="fa fa-facebook-square w3-hover-opacity"></i>
-    <i class="fa fa-twitter-square w3-hover-opacity"></i>
-    <i class="fa fa-whatsapp w3-hover-opacity"></i>
-    <i class="fa fa-snapchat-square w3-hover-opacity"></i>
-    <p class="w3-small">I can change the footer, but this template is really 
-
-fabulous, it is powered by <a href="https://www.w3schools.com/w3css/default.asp" 
-
-target="_blank" class="w3-hover-text-green">w3.css</a></p>
-  <!-- End footer -->
-  </footer>
-
-
+fabulous, it is powered by
+  <a class="w3-hover-text-green" href="https://www.w3schools.com/w3css/default.asp" target="_blank">
+   w3.css
+  </a>
+ </p>
+ <!-- End footer -->
+</footer>
 <!-- END PAGE CONTENT -->
-</html>
