@@ -187,7 +187,7 @@ padding-large" >ABOUT</a>
      While I was searching for
      <a href="https://github.com/je-suis-tm/graph-theory/blob/master/k%20core.ipynb">
       k core
-     </a>
+</a>
      graph in my university material, I discovered a module I have never taken called epidemic spreading on complex network. It suddenly struck me that we could apply graph theory to construct an agent-based model. The model would be able to simulate the epidemic outbreak and forecast the prevalence and the duration. That was the least I could contribute to this shitstorm caused by mankind. This project started there.
     </p>
     <p class="w3-justify w3-small">
@@ -211,15 +211,15 @@ padding-large" >ABOUT</a>
      Before moving onto a random graph, I took a naïve approach to predict the final death toll of novel corona virus by
      <a href="https://en.wikipedia.org/wiki/Gompertz_function">
       Gompertz curve
-     </a>
+</a>
      . The idea was inspired by an
      <a href="https://wwwnc.cdc.gov/eid/content/10/6/pdfs/v10-n6.pdf">
       article
-     </a>
+</a>
      on U.S. Centre of Disease Control journal (Emerging Infectious Diseases Vol. 10, No. 6, June 2004, Page 1165). The researchers intended to study the effectiveness of intervention measures during SARS pandemic in 2003. They chose
      <a href="https://en.wikipedia.org/wiki/Generalised_logistic_function">
       Richard’s curve
-     </a>
+</a>
      (which is a generalized logistic model) of different training data horizon to predict the potential result. Thus, the first step of this project was to replicate the similar result for SARS in 2003.
     </p>
     <p class="w3-justify">
@@ -231,38 +231,38 @@ padding-large" >ABOUT</a>
      Inevitably, there are other special forms of Richard's curve which are still fit for the purpose.
      <a href="https://en.wikipedia.org/wiki/Weibull_distribution">
       Weibull
-     </a>
+</a>
      ,
      <a href="http://www.pisces-conservation.com/growthhelp/index.html?janoschek.htm">
       Janoschek
-     </a>
+</a>
      ,
      <a href="http://www.pisces-conservation.com/growthhelp/index.html?morgan_mercer_floden.htm">
       Morgan-Mercer-Flodin
-     </a>
+</a>
      ,
      <a href="https://en.wikipedia.org/wiki/Von_Bertalanffy_function">
       von Bertalanffy
-     </a>
+</a>
      ,
      <a href="https://mro.massey.ac.nz/handle/10179/14618">
       Levakovic
-     </a>
+</a>
      ,
      <a href="https://www.researchgate.net/figure/Characteristics-of-main-models-fitted-with-the-Hossfeld-growth-equation_tbl2_202038062">
       Hossfeld
-     </a>
+</a>
      ,
      <a href="https://www.researchgate.net/publication/225560632_A_derivation_of_the_generalized_Korf_growth_equation_and_its_application">
       Korf
-     </a>
+</a>
      , etc.
     </p>
     <p class="w3-justify">
      The training data came from
      <a href="https://www.who.int/csr/sars/country/en">
       WHO official website
-     </a>
+</a>
      . The full script of web scraping and ETL is attached. I have to make a complaint on how inconsistent the format of WHO report is. I probably spent 10 minutes to set up the web scraper and another 30 minutes to design the model and the visualization. The data cleansing alone took me several hours. You are free to use the clean spreadsheet as long as you mention it comes from my hours of sweating and swearing.
     </p>
     <p class="w3-justify">
@@ -299,7 +299,7 @@ padding-large" >ABOUT</a>
      Now that we have showed the model is valid, the same methodology will be used to produce an early forecast for the novel corona virus. The data is still collected from
      <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports">
       WHO situation reports
-     </a>
+</a>
      . The format is even worse this time as the data is inside pdf files. Do you know that WHO staff type in every number manually? They seriously need a technology upgrade. You are still free to use the aggregated data as long as you give me enough credits. Aside from the terrible format, you would notice the change of format and metrics is no coincidence. If you relate it to the visit of WHO chief, I am pretty sure you would get the delicate political message.
     </p>
     <p class="w3-justify">
@@ -341,11 +341,11 @@ padding-large" >ABOUT</a>
      Gompertz curve is a naïve but effective approach. It is comprehensive and it can work with simple data structure. But the shortcoming of Gompertz curve is that we need to forecast cumulated infected cases and virus-caused death independently. In reality, they should be intertwined to a certain degree. That is when the classic approach of epidemic modelling,
      <a href="https://services.math.duke.edu/education/ccp/materials/diffcalc/sir/sir2.html">
       SIR model
-     </a>
+</a>
      , kicks in. This compartmental model is the foundation of the modern epidemiology. It is a dynamic system consisted of three
      <a href="https://mathinsight.org/ordinary_differential_equation_introduction">
       ordinary differential equations
-     </a>
+</a>
      which represents Susceptible, Infected and Recovered population. It has the capability of mapping out the prevalence and the duration of an epidemic outbreak. The flipside of the coin is too many pre-assumptions and conditions attached.
     </p>
     <p class="w3-justify">
@@ -357,7 +357,7 @@ padding-large" >ABOUT</a>
      The susceptible exposure S of any given time t is determined by three factors. The first is the crude birth rate α of all the living population (including the infected ones). It is based upon
      <a href="https://wwwnc.cdc.gov/eid/content/10/2/pdfs/v10-n2.pdf">
       a case
-     </a>
+</a>
      recorded on U.S. Centre of Disease Control journal (Emerging Infectious Diseases Vol. 10, No. 2, February 2004, Page 345), which the pregnant mother infected with SARS delivered a healthy infant. Whether it was due to the dedication of the health care workers or the contagion limit of the virus, we assume the virus cannot pass from the infected parents to the next generation. As long as you are not six feet deep under, you can deliver a healthy child, sadly another susceptible target. So far, there is no evidence suggesting the immunity can pass onto the second generation. Therefore, the inclusion of recovered patients is necessary. The second factor is the crude death rate γ on the susceptible exposure S. The cycle of life and death is inevitable even if you don’t get infected with virus. The third factor is the infection rate β. It quantifies the possibility of converting a susceptible individual to an infected patient. The conversion should be proportional to the respective numbers of S and I in the population. In general, susceptible curve follows an exponential equation, like Gompertz curve.
     </p>
     <p class="w3-justify">
@@ -376,18 +376,18 @@ padding-large" >ABOUT</a>
      The model we use for SARS is a deterministic model without stochastic features. SIR model has many variations such as SIS (where recovered patients can still get infected due to virus mutation), SEIR (the virus targets at people with certain genes or features, people don’t immediately get infected after exposure for various reasons), etc. You will find more models at
      <a href="https://institutefordiseasemodeling.github.io/Documentation/general/model-overview.html">
       Institute for Disease Modelling
-     </a>
+</a>
      . There are plenty of literatures on SARS epidemic modelling with more advanced models. They introduce other variables like quarantined patients and super spreaders. You will find them in the further reading section. Truth be told, the choice of SIR comes from the constraint of the data. Data is the new oil, no? There is only so much offered by WHO.
     </p>
     <p class="w3-justify">
      Now that we have set up the differential equations in the dynamic system, we should get hands on the modelling. Crude birth rate α and crude death rate γ are acquired from
      <a href="http://data.un.org">
       United Nations Statistics Division
-     </a>
+</a>
      . This is one of the best databases and datamarts I have ever seen across all the free data sources. In contrast to WHO, UN deserves some kudos for the clean-cut CSV format. Though we need to convert α and γ from annual rate to daily rate before leveraging them. Thus, the unknown parameters are infection rate β, fatality rate δ and recovery rate ε. They will be estimated by non-linear least square method. The objective is to minimize the cost function, sum of squared standardized error, by
      <a href="https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method">
       Nelder-Mead algorithm
-     </a>
+</a>
      .
     </p>
     <p class="w3-justify">
@@ -403,7 +403,7 @@ padding-large" >ABOUT</a>
      The
      <a href="https://en.wikipedia.org/wiki/Basic_reproduction_number">
       basic reproduction ratio
-     </a>
+</a>
      R0 for Hong Kong and Singapore are 0.5 and 0.7. R0 refers to the expected infected individuals of the next moment when only one infected person occurs in the entire population. R null larger than 1 is the pre-condition of an epidemic outbreak. As our simulation begins in the middle of the process, no wonder we observe a relatively small R null. The table in Wikipedia suggests R0 for SARS should oscillate between 2 and 5.
     </p>
     <p class="w3-justify">
@@ -495,7 +495,7 @@ padding-large" >ABOUT</a>
      One of the most prominent features of the projections above is the susceptible population S will fall to the very low eventually (the reasons behind were explained earlier). This reminds me of the
      <a href="https://www.bloomberg.com/news/articles/2020-02-13/coronavirus-could-infect-two-thirds-of-globe-researcher-says">
       article
-     </a>
+</a>
      on Feb 13th, 2020. A WHO adviser claimed two-thirds of the world’s population could catch the virus. At first, I laughed it off. I mean, dude, come on? When I finished the dynamic system, I ain’t laughing any more. Without global collaboration and transparent governance, the likelihood of the extreme scenario is pretty high.
     </p>
     <p class="w3-justify">
@@ -566,7 +566,7 @@ padding-large" >ABOUT</a>
      The legitimacy of edge-based compartmental model cannot survive without two essential assumptions. One is neighbor status independence. Assume we randomly select a vertex ι and ι has two neighbors, κ and λ, we ought to forbid the dependency of κ and λ. If κ can pass the disease to ι and ι can pass the disease to λ, it will violate the assumptions, so no disease transmission from ι is allowed. Apparently ι cannot pass the disease to others before infection. After ι gets infected, the odds of recovery or death will not move a decimal. It is easy to see that neighbor status independence guarantees the successful calculation of ΦS, ΦI, ΦR and ΦD. The other assumption is the deterministic performance. The infection, recovery and fatality rate equal to the fraction of the infected, recovered and dead in the overall population. As long as this assumption holds, we could shift our emphasis from the overall population onto the individual. More details of edge-based compartmental model can be found in appendix of
      <a href="https://scholar.harvard.edu/files/joelmiller/files/equivalent_models.pdf">
       this paper
-     </a>
+</a>
      .
     </p>
     <p class="w3-justify">
@@ -594,11 +594,11 @@ padding-large" >ABOUT</a>
      Imagine an average middle-class wife Jane Doe. She lives in Royal Victoria E16 and works in Canary Wharf E14. Every morning she has to physically contact her husband John Doe and their two kids. Later she takes DLR straight to West India during peak hour. How many people can she contact through commuting? US CDC recommends
      <a href="https://www.cdc.gov/coronavirus/2019-ncov/community/correction-detention/guidance-correctional-detention.html#ImplementSocialDistancing">
       social distancing
-     </a>
+</a>
      for 6 feet/2 meters at minimum. Assume the area of π2^2 square meters is a contact zone, how many people can we squeeze into this area? Let’s take a peep at
      <a href="https://en.wikipedia.org/wiki/Clothing_sizes">
       average European clothing size
-     </a>
+</a>
      . The hip girth should be considered as the largest part of your body dimension. The most detailed size chart on Wikipedia is the German one. The hip circumference of a medium German person regardless of gender is about 105 centimeters. Imagine the hip in round shape, the diameter is roughly over 30 centimeters. Consider the backpack/handbag and the layers of winter clothing, each person takes the area of 50 by 50 square centimeters. It’s difficult to fill a square area into a round area so we convert π2^2 square meters into 13^0.5 times 13^0.5 square meters. With each person has approximately 50 centimeters’ distance to another, we can fill 16 people including Jane Doe within the radius of 2 meters. It is completely possible during peak hour. If Jane Doe is a virus carrier, she can easily infect 30 people through commuting from/to work. Note that we are using European clothing size, if we use American one, we will probably end up with half of the result 😂
     </p>
     <p class="w3-justify">
@@ -611,7 +611,7 @@ padding-large" >ABOUT</a>
      Barabási-Albert model is a special case of Price’s model. Each vertex inside the model is guaranteed to have the minimum degree. Each new vertex added into the graph has higher odds connecting to existing vertices with large degree. In that sense, the early birds get worms. The earliest vertices usually have the largest degree. Assortative mixing is a debatable topic for scale-free models. Barabási-Albert model is supposed to have neutral degree correlation. Don’t take my word for it. Signore Barabási wrote the
      <a href="https://barabasi.com/f/620.pdf">
       material
-     </a>
+</a>
      for his own network science class.
     </p>
     <br/>
@@ -630,18 +630,18 @@ padding-large" >ABOUT</a>
      There are other plausible models, like
      <a href="https://github.com/je-suis-tm/graph-theory/blob/master/bianconi%20barabasi%20model.ipynb">
       Bianconi–Barabási model
-     </a>
+</a>
      and
      <a href="https://github.com/je-suis-tm/graph-theory/blob/master/watts%20strogatz%20model.ipynb">
       Watts-Strogatz model
-     </a>
+</a>
      . As a matter of fact, Ginestra Bianconi used to teach in my university even though we never met. I don’t really have enough confidence to say I fully understand that model. Bianconi–Barabási model is a variant of the Barabási–Albert model which the latecomer can gain an advantage as well. Watts-Strogatz model can capture the small world effect but the issue is its probability density function. It is in the form of Dirac Delta function and it cannot be expressed in closed form. It will ridiculously increase the time complexity of our project.
     </p>
     <p class="w3-justify">
      Edge-based compartmental model we mentioned earlier works on static models. The bad news is the real world is always chaotic. We don’t really meet the same group of people every day.
      <a href="https://en.wikipedia.org/wiki/Metapopulation">
       The meta population model
-     </a>
+</a>
      sounds closer to the reality. To incorporate this effect into the model, we may end up with a lot of extra dimensions in the system. For the sake of time complexity, we assume every agent in the system lives in a Truman’s show. Each agent meets the same group in the same location with the same routine every day. Another problem is the population growth. On average, the annual population growth in EU is about 1%. If we convert it to a daily rate, the number is 2.7e-05, so small that we choose to ignore its impact on the probability generating function. It is unlucky for an infant to crawl out of the womb during the pandemic outbreak but what doesn’t kill you make you stronger, right? Theoretically a newborn child should only have two connections, mama and papa. At maximum, a newborn child can inherit all the connections from the parents, e.g. the father goes shopping for grocery while carrying the baby. We take the latter approach so we don’t have to face the consequences of a dynamic variable-degree model. As for the dead and the recovered, they remain inside the model with their edges except they don’t really interact with the susceptible and the infected.
     </p>
     <p class="w3-justify">
@@ -653,7 +653,7 @@ padding-large" >ABOUT</a>
      In the time dependent process, we do not observe any different behaviors between two models. To simulate the epidemic process, we utilize
      <a href="https://github.com/je-suis-tm/graph-theory/blob/master/Epidemic%20Outbreak%20project/gillespie%20algorithm.ipynb">
       Gillespie algorithm
-     </a>
+</a>
      . It is capable of statistically correct simulation of each individual at each discrete step with respective to the underlying equations. We set the graph order fixed at 1000. Each time we only increment the mean degree by a small degree. We test a hundred times for both Erdős-Rényi model and Barabási-Albert model. Since the recovery and the fatality has nothing to do with the degree, we merely keep an eye on the susceptible. The result comes as a surprise. The susceptible doesn’t take a dip when the mean degree monotonically increases. It is very counterintuitive as the implementation of social distancing and quarantine is the best way to shift the curve downwards. The phenomenon could be attributable to the stochasticity of the model or the low infection rate we preset.
     </p>
     <br/>
@@ -702,15 +702,15 @@ padding-large" >ABOUT</a>
      Similar to differential equations, we remove the recovery from the model for COVID-19. So far, there is only one data source offering daily recovery,
      <a href="https://www.worldometers.info/coronavirus/#countries">
       Worldometers
-     </a>
+</a>
      . It doesn’t reveal its data source and WHO doesn’t include the recovery at the moment, so the data still comes from the poor format of WHO situation reports.
      <a href="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports">
       John Hopkins University
-     </a>
+</a>
      has set up web scrapers to extract daily data from Worldometers in case you want to have SIR model on COVID-19. However, I have found a better-structured data source,
      <a href="https://www.ecdc.europa.eu/en/geographical-distribution-2019-ncov-cases">
       European CDC
-     </a>
+</a>
      . Judging by the format, the metadata comes straight from the database which is handy for any researcher. If you read the instructions carefully, you will see they even feature a tutorial for R. Everybody thought EU was a dinosaur fossil but you never know! Since we have been using WHO for the previous two models, a change of data source has too much sunk cost so let’s stick to WHO for the moment.
     </p>
     <br/>
@@ -801,7 +801,7 @@ padding-large" >ABOUT</a>
      By the time I finished this piece of article, Kaggle has launched
      <a href="https://www.kaggle.com/covid19">
       corona virus challenge
-     </a>
+</a>
      . Since you have read this far, you must be really interested in data science (the math in graph theory could put off many readers), why not take up the challenge? I am no fan of Greta Thunberg and her flygskam but she is right. It’s time for a radical change, even for data scientists. The world doesn’t need more facial recognition or gait analysis experts. The world needs more physicists, geologists, meteorologists, zoologists, epidemiologists, etc. And you can be one of them!
     </p>
     <br/>
