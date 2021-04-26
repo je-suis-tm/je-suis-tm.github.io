@@ -158,10 +158,18 @@ padding-large" >ABOUT</a>
 
 <br>
 
-<code class="w3-codespan">conn = pyodbc.connect('DRIVER={SQL Server};SERVER=some_ip_address;DATABASE=some_database_name;UID=some_username;PWD=some_password')</code>
+<code class="w3-codespan">conn=pyodbc.connect("""</code>
 
 <br>
+  
+<code class="w3-codespan">DRIVER={SQL Server};SERVER=some_ip_address;DATABASE=some_database_name;UID=some_username;PWD=some_password</code>
 
+<br>
+  
+<code class="w3-codespan">""")</code>
+  
+<br>
+  
 <code class="w3-codespan">c = conn.cursor()</code>
 
 <br>
