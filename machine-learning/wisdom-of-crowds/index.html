@@ -124,7 +124,8 @@ padding-large" >ABOUT</a>
 <div class="w3-container w3-white w3-content w3-justify w3-margin-top" >
   
   
-    <h2 class="w3-wide">Wisdom of Crowds</h2>
+    
+<h2 class="w3-wide">Wisdom of Crowds</h2>
 
 <br>&nbsp;<br>
 
@@ -196,7 +197,7 @@ padding-large" >ABOUT</a>
 
 <p class="w3-justify">To evaluate the accuracy of the consensus estimate, 11 commodity prices forecasted by 8 different investment banks are collected as a sample. For any outsider, investment banks do not revise their forecast frequently, especially their long-term forecast. Because investment banks generate their revenue via customers’ block trading instead of report subscriptions. There is no incentive for any research analyst to frequently change the tune of the underlying asset. Apart from no extra bonus, it also makes them seem indecisive and poor at making prediction (which is true, you will see…). Has anyone watched the TV show “Industry”? One big night with the client is worth a thousand reports! Report writers are at the bottom of the food chain.</p>
 
-<p class="w3-justify">With that being said, we are only examining current year and one-year ahead outlooks. Unfortunately, these banks do not publish reports at the same date. We cannot pick a random date and expect numbers from all the banks. Oddly enough, most of the investment banks publish new research piece in August. With two-thirds of a year is passed, analysts are busy revising everything. This is where our dataset comes from. We take current year and one-year ahead outlook written in August 2019 to form a bank vs commodity matrix where each element is the normalized forecast price (percentage return). To ensure we end up with a complete matrix (to do matrix completion is another level of the problem), bank candidates are shortlisted to BMO, BOAML, Citi, Commonwealth, Deutsche, Goldman Sachs, JP Morgan and TD securities. Commodities are filtered into Brent, copper, Henry Hub, nickel, silver, WTI, thermal coal and zinc.</p>
+<p class="w3-justify">With that being said, we are only examining current year and one-year ahead outlooks. Unfortunately, these banks do not publish reports at the same date. We cannot pick a random date and expect numbers from all the banks. Oddly enough, most of the investment banks publish new research piece in August. With two-thirds of a year is passed, analysts are busy revising everything. This is where our dataset comes from. We take current year and one-year ahead outlook written in August 2019 to form a bank vs commodity matrix where each element is the normalized forecast price (percentage return). To ensure we end up with a complete matrix (to do matrix completion is another level of the problem), bank candidates are shortlisted to BMO, BOAML, Citi, Commonwealth, Deutsche, Goldman Sachs, JP Morgan and TD securities. Commodities are filtered into Brent, copper, Henry Hub, nickel, silver, WTI, thermal coal and zinc. Some of you may say the dataset is too small to be representative. This is not cherry picking. I have a consensus dataset fully traced back to 2010 but it takes an excessive amount of work to ETL complete matrices for each year. You are always welcome to challenge my result with your own dataset or simply <a href=https://www.marketwatch.com/tools/upgrades-downgrades>MarketWatch</a> rating history. The conclusion is highly likely to stay the same…</p>
 
 <p class="w3-justify">To effectively measure the wisdom of crowds, we need a control group – spot price. Initially, we would’ve thought spot price is a terrible idea. The market is turbulent and the spot price prediction is always flat. We can always expect some amount of forecast error coming out of it. In our best-case scenario, consensus estimate may be able to predict the exact price in the future. Well, mark-to-market is a standard practice in risk management. All open positions are marked to the spot market instead of the futures market. Spot price should contain more information than futures price in an efficient market. Thus, spot price will be on par with consensus estimate in our little experiment.</p>
 
@@ -218,7 +219,7 @@ padding-large" >ABOUT</a>
 
 <img src="https://raw.githubusercontent.com/je-suis-tm/machine-learning/master/Wisdom%20of%20Crowds%20project/preview/y0%20consensus%20vs%20spot.png" class="w3-image" width="600" height="450">
 
-<p class="w3-justify">That’s enough about the current year outlook. As mentioned before, knowing 66% of the data is quite an unfair advantage for consensus. One year ahead forecast is how spot price level the playing field. The chart below shows how the performance of consensus forecast rapidly deteriorates. Spot forecast error regardless of the commodity is at least 5% less than consensus forecast error despite the fact it is twice as large as current year outlook. None of the banks can outperform spot price. Where is the wisdom of crowds? Furthermore, TD Securities and BMO are consistently the worst performers with errors at 25% and 30% respectively. Commonwealth maintains its reputation as the best prophet, still at 15% forecast error. I cannot stop wondering why Canadian bank is so bad given both Australia and Canada are big commodity exporters. </p>
+<p class="w3-justify">That’s enough about the current year outlook. As mentioned before, knowing 66% of the data is quite an unfair advantage for consensus. One year ahead forecast is how spot price levels the playing field. The chart below shows how the performance of consensus forecast rapidly deteriorates. Spot forecast error regardless of the commodity is at least 5% less than consensus forecast error despite the fact it is twice as large as current year outlook. None of the banks can outperform spot price. Where is the wisdom of crowds? Furthermore, TD Securities and BMO are consistently the worst performers with errors at 25% and 30% respectively. Commonwealth maintains its reputation as the best prophet, still at 15% forecast error. I cannot stop wondering why Canadian bank is so bad given both Australia and Canada are big commodity exporters. </p>
 
 <br>
 
@@ -240,7 +241,7 @@ padding-large" >ABOUT</a>
 
 <p class="w3-justify">Dawid-Skene model was developed to assess a patient’s true response in regarding to different answers to different clinicians. Nowadays it is a common practice in crowd sourcing problem, e.g. data labelling for supervised learning. This model applies an algorithm on discrete classifications to aggregate individual opinions into one collective decision so that we can save money and time from domain knowledge training for data labelling. It takes into account of the heterogeneity of annotators and the complexity of fortune telling. </p>
 
-<p class="w3-justify">DS Model is one of the few models where text explanation is more comprehensive than math notations. The model per se is solved via Expectation Maximization algorithm. The steps are illustrated below.</p>
+<p class="w3-justify">DS Model is one of the few model where text explanation is more comprehensive than math notations. The model per se is solved via Expectation Maximization algorithm. The steps are illustrated below.</p>
 
 <ol>
 
@@ -254,9 +255,9 @@ padding-large" >ABOUT</a>
 
 </ol>
 
-<p class="w3-justify">In our particular case, the annotators refer to the banks. Each question refers to a commodity. The models only contain two labels (I have never seen flat price forecast from banks), price upside risk and price downside risk.</p>
+<p class="w3-justify">In our particular case, the annotators refer to the banks. Each question refers to a commodity. The model only contains two labels (I have never seen flat price forecast from banks), price upside risk and price downside risk.</p>
 
-<p class="w3-justify">For current year outlook, the model yields the same answer as Citigroup, Commonwealth Bank, Deutsche Bank and Goldman Sachs. On the bright side, half of the banks made a 100% accurate guess whereas the other half begs to differ on only one commodity – Platinum. On the dark side, this could be an indication of monoculture. For wisdom of crowds to work, there is one crucial element, diversity. The crowds must be characterized by different opinions and each person's opinion should be independent and free from the influence of others. DS Model cannot eliminate systematic errors that affect the opinions of the entire crowd. It can merely offset random errors caused by each person’s base rate bias. </p>
+<p class="w3-justify">For current year outlook, the model yields the same answer as Citigroup, Commonwealth Bank, Deutsche Bank and Goldman Sachs. On the bright side, half of the banks made a 100% accurate guess whereas the other half begs to differ on only one commodity – Platinum. On the dark side, this could be an indication of monoculture. For wisdom of crowds to work, there is one crucial element, diversity. The crowds must be characterized by different opinions and each person's opinion should be independent and free from the influence of others. DS Model cannot eliminate systematic errors that affect the opinions of the entire crowd. It can merely offset random noise caused by each person’s base rate bias. </p>
 
 <br>
 
@@ -286,7 +287,7 @@ padding-large" >ABOUT</a>
 
 <p class="w3-justify">It is rather implausible to calibrate the direction forecast under the influence of detrimental herding effect. We can still calibrate our mentality and change the objective. Now the end game is to work on the continuous case and calibrate the price prediction to minimize the forecast error. Let’s introduce a different model called Platt-Burges.</p>
 
-<p class="w3-justify">Platt-Burges model was developed to adjust the paper submission mechanism for NIPS conference. Assuming <span style="background-color: #f2ece1;">P</span> papers are submitted to the conference and <span style="background-color: #f2ece1;">R</span> reviewers in the committee mark the score of these papers, each paper will be given <span style="background-color: #f2ece1;">R</span> different scores by all the reviewers (matrix completion is beyond the scope of this project). Some reviewers are harsh and they tend to give low scores to every paper. Some reviewers are moody and their scores depend on how many &#x1f369; they have eaten for lunch. Thus, the score of a paper given by a reviewer, denoted as <span style="background-color: #f2ece1;">x</span>, can be decomposed into the linear combination of three components – the underlying intrinsic value <span style="background-color: #f2ece1;">y</span>, the reviewer bias <span style="background-color: #f2ece1;">z</span> and some random disturbance <span style="background-color: #f2ece1;">ε</span>. As we can only observe the variable <span style="background-color: #f2ece1;">x</span>, <span style="background-color: #f2ece1;">y</span> and <span style="background-color: #f2ece1;">z</span> are the latent variables of our interest. To make the life easier, we assume <span style="background-color: #f2ece1;">x</span>, <span style="background-color: #f2ece1;">y</span> and <span style="background-color: #f2ece1;">z</span> independently follow different Gaussian distributions.</p>
+<p class="w3-justify">Platt-Burges model was developed to adjust the paper submission mechanism for NIPS conference. Assuming <span style="background-color: #f2ece1;">P</span> papers are submitted to the conference and <span style="background-color: #f2ece1;">R</span> reviewers in the committee mark the score of these papers, each paper will be given <span style="background-color: #f2ece1;">R</span> different scores by all the reviewers (matrix completion is beyond the scope of this project). Some reviewers are harsh and they tend to give low scores to every paper. Some reviewers are moody and their scores depend on how many &#x1f369; they have eaten for lunch. Therefore, the score of a paper given by a reviewer, denoted as <span style="background-color: #f2ece1;">x</span>, can be decomposed into the linear combination of three components – the underlying intrinsic value <span style="background-color: #f2ece1;">y</span>, the reviewer bias <span style="background-color: #f2ece1;">z</span> and some random disturbance <span style="background-color: #f2ece1;">ε</span>. As we can only observe the variable <span style="background-color: #f2ece1;">x</span>, <span style="background-color: #f2ece1;">y</span> and <span style="background-color: #f2ece1;">z</span> are the latent variables of our interest. To make the life easier, we assume <span style="background-color: #f2ece1;">x</span>, <span style="background-color: #f2ece1;">y</span> and <span style="background-color: #f2ece1;">z</span> independently follow different Gaussian distributions.</p>
 
 <br>
 
@@ -318,7 +319,7 @@ padding-large" >ABOUT</a>
 
 <img src="https://raw.githubusercontent.com/je-suis-tm/machine-learning/master/Wisdom%20of%20Crowds%20project/preview/y0%20error%20by%20commodities.png" class="w3-image" width="600" height="450">
 
-<p class="w3-justify">If we take a deep dive into each bank’s bias level, we can see that Commonwealth bank is the most bearish. On average, it creates -1.6% on the price forecast. Commonwealth bank also has one of the smallest standard deviation at merely 1.3%. Recalled from the descriptive statistics, Commonwealth bank is the most accurate fortune teller, consistently in both current year and one year ahead outlook. On the contrary, the second most accurate, BOAML, is the most bullish on commodities. It is also one of the moodiest fortune tellers where its mood swing (standard deviation) is the second highest. Oddly enough, the worst performers BMO and TD Securities are also bullish on commodities with volatile mood swing. It seems that bearish/bullish bias does not affect the forecast accuracy much. It is the bias volatility that determines the performance of the forecast. This makes a lot of sense. The commodity market is deeply intertwined as energy is the foundation to extract every commodity and metals are usually discovered in several groups at the exploration stage. The best forecast should be consistent with all the battle fronts.</p>
+<p class="w3-justify">If we take a deep dive into each bank’s bias level, we can see that Commonwealth bank is the most bearish. On average, its bias is at -1.6%. Commonwealth bank also has one of the smallest standard deviation at merely 1.3%. Recalled from the descriptive statistics, Commonwealth bank is the most accurate fortune teller, consistently in both current year and one year ahead outlook. On the contrary, the second most accurate, BOAML, is the most bullish on commodities. It is also one of the moodiest fortune tellers where its mood swing (standard deviation) is the second highest. Oddly enough, the worst performers BMO and TD Securities are also bullish on commodities with volatile mood swing. It seems that bearish/bullish bias does not affect the forecast accuracy much. It is the bias volatility that determines the performance of the forecast. This makes a lot of sense. The commodity market is deeply intertwined as energy is the foundation to extract every commodity and metals are usually discovered in several groups at the exploration stage. The best forecast should be consistent with all the battle fronts.</p>
 
 <br>
 
@@ -449,7 +450,6 @@ padding-large" >ABOUT</a>
 </li>
 
 
-
 <br>
 
 <p>
@@ -461,6 +461,7 @@ padding-large" >ABOUT</a>
 </i>
 
 </p>
+
 </ol>
   
     <br><br>
